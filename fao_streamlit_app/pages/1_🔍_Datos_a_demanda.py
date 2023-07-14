@@ -1,10 +1,6 @@
 import streamlit as st
 import datetime
 from loguru import logger
-### Esta seccion de Codigo se agrega, para poder utilizar las librerias Custom que estan fuera del directorio de trabajo.
-import sys
-sys.path.append('./fao_streamlit_app')
-####
 from lib.manage_files import download_fao_file
 from lib.df_functions import load_data
 from lib.app_functions import return_condition, create_list_options, agrupation
