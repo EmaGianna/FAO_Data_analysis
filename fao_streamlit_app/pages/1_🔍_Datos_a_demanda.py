@@ -1,6 +1,6 @@
-from fao_streamlit_app.lib.manage_files import download_fao_file
-from fao_streamlit_app.lib.df_functions import load_data
-from fao_streamlit_app.lib.app_functions import return_condition, create_list_options, agrupation
+from lib.manage_files import download_fao_file
+from lib.df_functions import load_data
+from lib.app_functions import return_condition, create_list_options, agrupation
 import streamlit as st
 import datetime
 from loguru import logger
