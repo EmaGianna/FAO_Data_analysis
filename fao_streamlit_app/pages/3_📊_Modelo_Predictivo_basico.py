@@ -1,7 +1,10 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
-
+### Esta seccion de Codigo se agrega, para poder utilizar las librerias Custom que estan fuera del directorio de trabajo.
+import sys
+sys.path.append('./fao_streamlit_app')
+####
 from lib.df_functions import load_data
 from lib.app_functions import return_condition, create_list_options, anos_prediccion
 from lib.statistics_functions import simple_forecast_statsmodel, simple_forecast_sickit_learn

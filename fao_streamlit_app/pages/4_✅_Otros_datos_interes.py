@@ -1,4 +1,8 @@
 import streamlit as st
+### Esta seccion de Codigo se agrega, para poder utilizar las librerias Custom que estan fuera del directorio de trabajo.
+import sys
+sys.path.append('./fao_streamlit_app')
+####
 from lib.df_functions import load_data
 
 
