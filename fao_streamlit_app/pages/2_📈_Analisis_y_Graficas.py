@@ -1,8 +1,9 @@
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
-from lib.df_functions import load_data
-from lib.app_functions import return_condition, create_list_options, agrupation
+from fao_streamlit_app.lib.df_functions import load_data
+from fao_streamlit_app.lib.app_functions import return_condition, create_list_options, agrupation
+
 
 if __name__ == '__main__':
 

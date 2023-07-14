@@ -1,5 +1,6 @@
 import streamlit as st
-from lib.df_functions import load_data
+from fao_streamlit_app.lib.df_functions import load_data
+
 
 if __name__ == '__main__':
 

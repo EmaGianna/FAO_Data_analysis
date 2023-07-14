@@ -2,9 +2,9 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 
-from lib.df_functions import load_data
-from lib.app_functions import return_condition, create_list_options, anos_prediccion
-from lib.statistics_functions import simple_forecast_statsmodel, simple_forecast_sickit_learn
+from fao_streamlit_app.lib.df_functions import load_data
+from fao_streamlit_app.lib.app_functions import return_condition, create_list_options, anos_prediccion
+from fao_streamlit_app.lib.statistics_functions import simple_forecast_statsmodel, simple_forecast_sickit_learn
 
 
 if __name__ == '__main__':
