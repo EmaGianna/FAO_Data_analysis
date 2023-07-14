@@ -3,4 +3,4 @@ plotly
 scikit-learn
 statsmodels
 streamlit
-loguru
+unidecode
