@@ -25,7 +25,7 @@ if __name__ == '__main__':
                 """)
     
     
-    tab1, tab2, tab3, tab4, tab5, tab6, tab7  = st.tabs([["Total de emisiones", "10 más emisores", "10 menos emisores", "Total de emisiones por gas",
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7  = st.tabs(["Total de emisiones", "10 más emisores", "10 menos emisores", "Total de emisiones por gas",
                                               "Productos que más emiten", "Países que más emiten", "Productos que más emiten a nivel global"
                                               ])
 
