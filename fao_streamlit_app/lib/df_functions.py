@@ -36,7 +36,7 @@ def load_data_filtered(path_file):
     """
 
     df = pd.read_csv(path_file, encoding='utf-8')
-    df_fao = df.copy()
+    df_fao = df
     df_fao.columns = [unidecode(column).upper() for column in df_fao.columns]
     logger.info(f"Dataframe df_fao_subset was created correctly. With {df_fao.shape[0]} lines and {df_fao.shape[1]} columns")
 
