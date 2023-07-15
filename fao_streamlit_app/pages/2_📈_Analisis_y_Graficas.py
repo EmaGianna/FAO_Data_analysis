@@ -93,7 +93,7 @@ if __name__ == '__main__':
                     if len(df_subset_fao_area) > 0:
                         st.info(f'Graficas para el filtro: {label}, {elem}, {prod}', icon="ℹ️")
                         # Matriz de correlación
-                        correlation_matrix = df_subset_fao_area.corr(numeric_only=True)
+                        correlation_matrix = df_subset_fao_area.corr()#df_subset_fao_area.corr(numeric_only=True)
                         fig_corr = px.imshow(correlation_matrix, color_continuous_scale='YlGnBu', title=f'Matriz de Correlación de {label} \nElemento: {elem} \nProducto: {prod}')
                         st.plotly_chart(fig_corr)
                         # Gráfico de contorno
