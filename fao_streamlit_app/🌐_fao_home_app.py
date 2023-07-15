@@ -2,6 +2,7 @@
 import streamlit as st
 import datetime
 from loguru import logger
+from lib.df_functions import load_data_filterd_parquet
 
 if __name__ == '__main__':
 
@@ -13,6 +14,11 @@ if __name__ == '__main__':
     st.set_page_config(page_title="Estadisticas FAO",page_icon="🌐",)
 
     st.write("# Poc Analisis de Datos FAO 🌐")
+    
+    url = 'https://github.com/EmaGianna/FAO_Data_analysis/raw/main/file/FAO_filtered.parquet'
+    df = load_data_filterd_parquet(url)
+    st.session_state["key"] = df
+    
 
     with st.sidebar:
         st.sidebar.success("Selecciones la seccion a Visitar")
