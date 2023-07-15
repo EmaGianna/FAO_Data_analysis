@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
-from lib.df_functions import load_data_filtered
+from lib.df_functions import load_data_filterd_parquet
 from lib.app_functions import return_condition, create_list_options, agrupation
 
 
@@ -16,8 +16,9 @@ if __name__ == '__main__':
             * [Emanuel Giannattasio](mailto:emanuel.giannattasio@gmail.com)
             """)
     
-    url = "https://media.githubusercontent.com/media/EmaGianna/FAO_Data_analysis/main/file/FAO_filtered.csv"
-    df = load_data_filtered(url)
+    # URL del archivo
+    url = 'https://github.com/EmaGianna/FAO_Data_analysis/raw/main/file/FAO_filtered.parquet'
+    df = load_data_filterd_parquet(url)
     
     st.markdown(
      """

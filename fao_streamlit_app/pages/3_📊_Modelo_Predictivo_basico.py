@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
-from lib.df_functions import load_data_filtered
+from lib.df_functions import load_data_filterd_parquet
 from lib.app_functions import return_condition, create_list_options, anos_prediccion
 from lib.statistics_functions import simple_forecast_statsmodel, simple_forecast_sickit_learn
 
@@ -17,8 +17,9 @@ if __name__ == '__main__':
             * [Emanuel Giannattasio](mailto:emanuel.giannattasio@gmail.com)
             """)
     
-    url = "https://media.githubusercontent.com/media/EmaGianna/FAO_Data_analysis/main/file/FAO_filtered.csv"
-    df = load_data_filtered(url)
+    # URL del archivo
+    url = 'https://github.com/EmaGianna/FAO_Data_analysis/raw/main/file/FAO_filtered.parquet'
+    df = load_data_filterd_parquet(url)
     
     st.markdown("""
                 En esta seccion de la web, podra realizar un filtro de datos. Ademas, podra seleccionar del despleglable un año  
