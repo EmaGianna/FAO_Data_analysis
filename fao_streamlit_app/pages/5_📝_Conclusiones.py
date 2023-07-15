@@ -13,7 +13,8 @@ if __name__ == '__main__':
 
     st.markdown(
         """
-        ## Las Conclusiones se basan respecto al analisis de datos realizado y criterios aplicados por los analistas.
+        **Respecto a las conclusiones, cabe mencionar que han sido expuestas en base a los criterios de los analistas  
+        y los analisis previamente realizados.**
         
         1. Se puede apreciar a traves de los analisis de correlacion, analisis de dispersion y las distintas graficas,  
         que las emisiones fueron en crecimiento  año tras año, en practicamente todas las agrupaciones correspondientes  
