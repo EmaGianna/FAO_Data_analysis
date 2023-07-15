@@ -1,6 +1,7 @@
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
+import pandas as pd 
 from lib.df_functions import load_data_filterd_parquet
 from lib.app_functions import return_condition, create_list_options, agrupation
 
@@ -93,8 +94,12 @@ if __name__ == '__main__':
                     df_subset_fao_area = df_subset_fao[(df_subset_fao['AREA']==label) & (df_subset_fao['ELEMENTO']==elem) & (df_subset_fao['PRODUCTO']==prod)]
                     if len(df_subset_fao_area) > 0:
                         st.info(f'Graficas para el filtro: {label}, {elem}, {prod}', icon="ℹ️")
-                        # Matriz de correlación
-                        correlation_matrix = df_subset_fao_area.corr()#df_subset_fao_area.corr(numeric_only=True)
+                        # Matriz de correlación, check pandas version
+                        if pd.__version__< '1.5.3': 
+                            correlation_matrix = df_subset_fao_area.corr()
+                        else:
+                            correlation_matrix = df_subset_fao_area.corr(numeric_only=True)
+                        
                         fig_corr = px.imshow(correlation_matrix, color_continuous_scale='YlGnBu', title=f'Matriz de Correlación de {label} \nElemento: {elem} \nProducto: {prod}')
                         st.plotly_chart(fig_corr)
                         # Gráfico de contorno
