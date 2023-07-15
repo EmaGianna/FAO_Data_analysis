@@ -24,7 +24,7 @@ def load_data(path_file):
     return df_fao_subset
 
 @st.cache_data
-def load_data_filterd(path_file):
+def load_data_filtered(path_file):
     """
     The function `load_data_filtered` reads a CSV file from a given path, creates a copy of the
     dataframe, converts the column names to uppercase and removes any special characters, and returns
@@ -35,7 +35,7 @@ def load_data_filterd(path_file):
     :return: the filtered dataframe `df_fao`.
     """
 
-    df = pd.read_csv(path_file, encoding='latin1')
+    df = pd.read_csv(path_file, encoding='utf-8')
     df_fao = df.copy()
     df_fao.columns = [unidecode(column).upper() for column in df_fao.columns]
     logger.info(f"Dataframe df_fao_subset was created correctly. With {df_fao.shape[0]} lines and {df_fao.shape[1]} columns")

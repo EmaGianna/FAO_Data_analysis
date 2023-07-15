@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
-from lib.df_functions import load_data
+from lib.df_functions import load_data_filtered
 from lib.app_functions import return_condition, create_list_options, agrupation
 
 
@@ -16,8 +16,8 @@ if __name__ == '__main__':
             * [Emanuel Giannattasio](mailto:emanuel.giannattasio@gmail.com)
             """)
     
-    extract_path = "/tmp/emisiones"
-    df = load_data(f'{extract_path}/Emisiones_Totales_S_Todos_los_Datos_Normalizado.csv')
+    url = "https://media.githubusercontent.com/media/EmaGianna/FAO_Data_analysis/main/file/FAO_filtered.csv"
+    df = load_data_filtered(url)
     
     st.markdown(
      """
