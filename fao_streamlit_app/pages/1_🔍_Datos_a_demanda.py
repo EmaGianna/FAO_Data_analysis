@@ -19,15 +19,9 @@ if __name__ == '__main__':
     
     begin_time = datetime.datetime.now()
 
-    # URL del archivo ZIP
-    url = "https://fenixservices.fao.org/faostat/static/bulkdownloads/Emisiones_Totales_S_Todos_los_Datos_(Normalizado).zip"
-    # Ruta de destino para guardar el archivo ZIP
-    dest_path = "/tmp/emisiones.zip"
-    # Ruta de destino para extraer los archivos del ZIP
-    extract_path = "/tmp/emisiones"
-    download_fao_file(url, dest_path, extract_path)
-    
-    df = load_data(f'{extract_path}/Emisiones_Totales_S_Todos_los_Datos_Normalizado.csv')
+    # URL del archivo
+    url = "https://github.com/EmaGianna/FAO_Data_analysis/raw/main/file/Emisiones_Totales_S_Todos_los_Datos_(Normalizado).csv"
+    df = load_data(url)
     
     st.markdown(
      """
