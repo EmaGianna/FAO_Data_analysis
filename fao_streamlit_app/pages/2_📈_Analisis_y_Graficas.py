@@ -8,9 +8,9 @@ from lib.app_functions import return_condition, create_list_options, agrupation
 
 if __name__ == '__main__':
 
-    st.set_page_config(page_title="Analisis y Graficas", page_icon="📈")
-    st.markdown("# Analisis y Graficas")
-    st.sidebar.header("Analisis y Graficas")
+    st.set_page_config(page_title="Análisis y Gráficas", page_icon="📈")
+    st.markdown("# Análisis y Gráficas")
+    st.sidebar.header("Análisis y Gráficas")
     st.sidebar.markdown("""
             Proyecto desarrollado por:
             * [Damian Mariescurrena](mailto:damianmariescurrena@gmail.com)
@@ -23,8 +23,8 @@ if __name__ == '__main__':
     
     st.markdown(
      """
-        En la paresente seccion podra realizar las siguientes acciones:  
-        
+        En la presente sección podrá realizar las siguientes acciones:  
+       
        * Exploración Inicial de Datos.
        * Exploración en base a los filtros aplicados.
 
@@ -32,8 +32,8 @@ if __name__ == '__main__':
     
     st.header("Exploración Inicial")
     st.markdown("""
-                Exploracion inicial por pais para ver como se encuentra la distribución  
-                de las emisiones por cada area dentro de un mapa
+                Exploración inicial por país para ver cómo se encuentra la distribución  
+                de las emisiones por cada área dentro de un mapa
                 """)
 
     df_temp_fao= df[(df['ANO']>=2000)]
@@ -73,9 +73,9 @@ if __name__ == '__main__':
 
     st.header("Exploración en base a los filtros aplicados")
     
-    st.subheader("Selecciones los filtros deseados")
+    st.subheader("Seleccion los filtros deseados")
     list_areas, list_prod, list_elem, list_ano, list_fuente = create_list_options(df)
-    area = st.multiselect('Elija Area/Pais: ', list_areas, list_areas[0])
+    area = st.multiselect('Elija Área/País: ', list_areas, list_areas[0])
     producto = st.multiselect('Elija Producto: ', list_prod, list_prod[0])
     elemento = st.multiselect('Elija un gas/elemento: ', list_elem, list_elem[0])
     condition = return_condition('df',area, producto, elemento)
@@ -93,7 +93,7 @@ if __name__ == '__main__':
                 for prod in df_subset_fao['PRODUCTO'].unique().tolist():
                     df_subset_fao_area = df_subset_fao[(df_subset_fao['AREA']==label) & (df_subset_fao['ELEMENTO']==elem) & (df_subset_fao['PRODUCTO']==prod)]
                     if len(df_subset_fao_area) > 0:
-                        st.info(f'Graficas para el filtro: {label}, {elem}, {prod}', icon="ℹ️")
+                        st.info(f'Gráficas para el filtro: {label}, {elem}, {prod}', icon="ℹ️")
                         # Matriz de correlación, check pandas version
                         if pd.__version__< '1.5.3': 
                             correlation_matrix = df_subset_fao_area.corr()
@@ -109,4 +109,4 @@ if __name__ == '__main__':
                         fig_scatter = px.scatter(df_subset_fao_area, x='ANO', y='VALOR', trendline='ols', title=f'Gráfico Scatter de {label} \nElemento: {elem} \nProducto: {prod}')
                         st.plotly_chart(fig_scatter)
                     else:
-                        st.warning(f'No hay datos a graficar para la combinacion de filtro: {label}, {elem}, {prod}', icon="⚠️")
+                        st.warning(f'No hay datos a graficar para la combinación de filtro: {label}, {elem}, {prod}', icon="⚠️")

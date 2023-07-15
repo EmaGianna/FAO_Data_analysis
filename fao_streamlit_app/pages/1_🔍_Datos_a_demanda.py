@@ -21,12 +21,12 @@ if __name__ == '__main__':
     
     st.markdown(
      """
-     # Exploracion de datos
-        En la paresente web podra realizar las siguientes acciones:  
+     # Exploración de datos
+        En la presente web podrá realizar las siguientes acciones:  
         
        * Filtrar los datos de FAO, en base a los filtros preestablecidos.
-       * Realizar sumarizacion de datos en base a diferentes agrupaciones.
-       
+       * Realizar sumarización de datos en base a diferentes agrupaciones.
+
      """)
 
 # The code block you provided is creating multiple lists (`list_areas`, `list_prod`, `list_elem`,
@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     st.subheader("Selecciones los filtros deseados")
     list_areas, list_prod, list_elem, list_ano, list_fuente = create_list_options(df)
-    area = st.multiselect('Elija Area/Pais: ', list_areas, list_areas[0])
+    area = st.multiselect('Elija Área/País:', list_areas, list_areas[0])
     producto = st.multiselect('Elija Producto: ', list_prod, list_prod[0])
     elemento = st.multiselect('Elija un gas/elemento: ', list_elem, list_elem[0])
     ano = st.multiselect('Elija un año: ', list_ano, list_ano[0])
@@ -63,7 +63,7 @@ if __name__ == '__main__':
         mime='text/csv',
     )
 
-    st.subheader("Selecciones los campos por los que desea realizar una agrupacion")
+    st.subheader("Selecciones los campos por los que desea realizar una agrupación")
     fields_list = df.columns.to_list()
     fields_list.remove('VALOR')
     fields = st.multiselect('Elija los campos para agrupar: ', fields_list, fields_list[0])
@@ -78,4 +78,4 @@ if __name__ == '__main__':
     )
 
     end_time = datetime.datetime.now()
-    logger.debug(f'tiempo de ejecucion:{str(end_time - begin_time)}')
+    logger.debug(f'tiempo de ejecución:{str(end_time - begin_time)}')

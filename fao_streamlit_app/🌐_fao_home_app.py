@@ -21,9 +21,9 @@ if __name__ == '__main__':
     
 
     with st.sidebar:
-        st.sidebar.success("Selecciones la seccion a Visitar")
-        st.write('Esta app es una poc de un analisis mas extenso sobre datos que provee la ONU\n \
-                 en este caso en particular sobre datos de emisiones de gaases GHG provistas por\n \
+        st.sidebar.success("Selecciones la sección a Visitar")
+        st.write('Esta app es una poc de un análisis más extenso sobre datos que provee la ONU\n \
+                 en este caso en particular sobre datos de emisiones de gases GHG provistas por\n \
                  [FAO](https://www.fao.org/faostat/es/#data/GT)')
         st.markdown("""
                     Proyecto desarrollado por:
@@ -105,10 +105,10 @@ if __name__ == '__main__':
         *	Uso de electricidad en agrícola
         *	Venta de alimentos
         
-        ## Observacion
-        Por razones geopoliticas, como la aparicion y desaparicion de paises, se ha limitado el analisis
-        que se vera en las siguiente paginas, al año 2000 en adelante.
-        
+        ## Observación
+        Por razones geopolíticas, como la aparicion y desaparicion de países, se ha limitado el análisis
+        que se verá en las siguiente páginas, al año 2000 en adelante.
+
         """
     )
 

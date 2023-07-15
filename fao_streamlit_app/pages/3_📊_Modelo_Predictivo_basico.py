@@ -8,9 +8,9 @@ from lib.statistics_functions import simple_forecast_statsmodel, simple_forecast
 
 if __name__ == '__main__':
 
-    st.set_page_config(page_title="Modelo Predictivo Basico", page_icon="📊")
-    st.markdown("# Modelo Predictivo Basico")
-    st.sidebar.header("Modelo Predictivo Basico")
+    st.set_page_config(page_title="Modelo Predictivo Básico", page_icon="📊")
+    st.markdown("# Modelo Predictivo Básico")
+    st.sidebar.header("Modelo Predictivo Básico")
     st.sidebar.markdown("""
             Proyecto desarrollado por:
             * [Damian Mariescurrena](mailto:damianmariescurrena@gmail.com)
@@ -22,14 +22,14 @@ if __name__ == '__main__':
     df = st.session_state["key"]
     
     st.markdown("""
-                En esta seccion de la web, podra realizar un filtro de datos. Ademas, podra seleccionar del despleglable un año  
-                a fin de realizar una prediccion del crecimiento de emision de GHG.
+                En esta sección de la web, podrá realizar un filtro de datos. Además, podrá seleccionar del desplegable un año  
+                a fin de realizar una predicción del crecimiento de emisión de GHG.
                 """)
     
     
-    st.subheader("Selecciones los filtros deseados")
+    st.subheader("Seleccion los filtros deseados")
     list_areas, list_prod, list_elem, list_ano, list_fuente = create_list_options(df)
-    area = st.multiselect('Elija Area/Pais: ', list_areas, list_areas[0])
+    area = st.multiselect('Elija Área/País: ', list_areas, list_areas[0])
     producto = st.multiselect('Elija Producto: ', list_prod, list_prod[0])
     elemento = st.multiselect('Elija un gas/elemento: ', list_elem, list_elem[0])
     ano = st.multiselect('Elija un año: ', list_ano, list_ano[:2])
@@ -40,7 +40,7 @@ if __name__ == '__main__':
    
     if len(ano) >=2:
         list_ano_pred = tuple(anos_prediccion(df_subset_fao))
-        anio = st.selectbox('Elija un año a futuro para ver prediccion: ', list_ano_pred)
+        anio = st.selectbox('Elija un año a futuro para ver predicción: ', list_ano_pred)
         tab_labels = df_subset_fao['AREA'].unique().tolist()
         tabs = st.tabs(tab_labels)
         
@@ -65,7 +65,7 @@ if __name__ == '__main__':
                              ,color="ANO"
                              ,color_continuous_scale='Blues'
                              ,labels={'ANO': 'Año', 'VALOR': 'Emisiones en miles de toneladas'}
-                             ,title=f'Proyeccion de emisiones futuras de {elemento} en {label}'
+                             ,title=f'Proyección de emisiones futuras de {elemento} en {label}'
                             )
                 st.plotly_chart(fig_bar)
 
